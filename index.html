@@ -4,10 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Adrian</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+        section {
+            padding: 80px 0;
+        }
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #333;
+        }
+    </style>
 </head>
 <body>
-    <p>halo perkenalkan nama saya</p>
-    <h3>Muhammad Adrian Fernanda</h3>
-    <p>saya adalah junior backend web developer</p>
+
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Portofolio Adrian</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang Saya</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Keahlian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Tentang Saya -->
+    <section id="about" class="text-center">
+        <div class="container">
+            <h1 class="display-4 mb-3">Halo, Perkenalkan!</h1>
+            <p class="lead">Nama saya</p>
+            <h3 class="text-primary mb-4">Muhammad Adrian Fernanda</h3>
+            <p class="fs-5">Saya adalah <span class="fw-bold">Junior Backend Web Developer</span></p>
+        </div>
+    </section>
+
+    <!-- Section Keahlian -->
+    <section id="skills" class="bg-dark text-center text-light">
+        <div class="container">
+            <h2 class="mb-4">Keahlian</h2>
+            <p class="fs-5">PHP, Laravel, MySQL, API Integration, Flutter (Mobile Frontend)</p>
+        </div>
+    </section>
+
+    <!-- Section Kontak -->
+    <section id="contact" class="text-center">
+        <div class="container">
+            <h2 class="mb-4">Kontak Saya</h2>
+            <p>Email: <a href="mailto:fernanda.adrian2@gmail.com" class="text-light">fernanda.adrian2@gmail.com</a></p>
+            <p>Phone: 081-221-809603</p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
